@@ -114,4 +114,11 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+
+    <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.8.0">
+        <param name="APP_ID" value="291253171303299" />
+        <param name="APP_NAME" value="mownet" />
+    </gap:plugin>
+
+
 </widget>
