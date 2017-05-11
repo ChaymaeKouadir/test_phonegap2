@@ -1,4 +1,4 @@
-.myIframe {
+/*.myIframe {
     position: relative;
     padding-bottom: 65.25%;
     padding-top: 30px;
@@ -13,4 +13,26 @@ border: solid black 1px;
     left: 0;
     width: 100%;
     height: 100%;
+}
+*/
+body{
+    padding:0;
+    margin:0;
+}
+.myFbIsframe iframe {
+    position: relative;
+    overflow: auto;
+    -webkit-overflow-scrolling:touch; //<<--- THIS IS THE KEY
+border: solid black 1px;
+}
+.myFbIframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.myFbIframe{
+    width:100%;
+    height:100vh;
 }
