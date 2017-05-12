@@ -38,9 +38,13 @@
 	function toggleMenu() {
 		if( isOpen ) {
 			classie.remove( bodyEl, 'show-menu' );
-		}
+            document.getElementById("dip").style.display = "none";
+
+        }
 		else {
 			classie.add( bodyEl, 'show-menu' );
+			/*dip*/
+			document.getElementById("dip").style.display = "block";
 		}
 		isOpen = !isOpen;
 	}

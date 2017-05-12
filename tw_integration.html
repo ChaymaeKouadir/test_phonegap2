@@ -1,16 +1,31 @@
 <html>
 <head>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/lightwidget.js"></script>
 
+    <link rel="stylesheet" href="css/style_fb.css">
+    <script>
+        $(document).ready(function () {
+            $(function(){
+                $("#headerDiv").load("header.html");
+            });
+            $(function(){
+                $("#footerDiv").load("footer.html");
+            });
+        });
 
-
+    </script>
 </head>
 <body>
-
-
-
+<div class="content-wrap">
+    <div id="dip"></div>
+    <div id="headerDiv"></div>
 <a class="twitter-timeline"  href="https://twitter.com/hashtag/mownetAVIGNON" data-widget-id="862596003056287744">Tweets sur #mownetAVIGNON</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
+    <div id="footerDiv"></div>
 
+</div>
+<!-- Rest of the code -->
 </body>
 </html>

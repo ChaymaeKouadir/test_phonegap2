@@ -1,15 +1,31 @@
-<!DOCTYPE html>
 <html>
 <head>
+    <script src="js/jquery-3.2.1.js"></script>
     <link rel="stylesheet" href="css/style_fb.css">
+    <script>
+        $(document).ready(function () {
+            $(function(){
+                $("#headerDiv").load("header.html");
+            });
+            $(function(){
+                $("#footerDiv").load("footer.html");
+            });
+        });
+
+    </script>
 </head>
 <body>
-<div class='myFbIframe' >
-    <iframe id="fbPageIframe" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMoWNET.2017&tabs=timeline&width=360&height=640&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=198253330689310"
-            width="100%"
-            height="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true">
-    </iframe>
+<div class="content-wrap">
+    <div id="headerDiv"></div>
+    <div class='myFbIframe' >
+        <div id="dip"></div>
+        <iframe id="fbPageIframe" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMoWNET.2017&tabs=timeline&width=360&height=640&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=198253330689310"
+                width="100%"
+                height="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true">
+        </iframe>
+    </div>
+    <div id="footerDiv"></div>
 </div>
-
+<!-- Rest of the code -->
 </body>
 </html>
