@@ -1,0 +1,37 @@
+<html>
+<head>
+    <script src="js/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="css/style_fb.css">
+    <script>
+        $(document).ready(function () {
+            $(function(){
+                $("#headerDiv").load("header.html");
+            });
+            $(function(){
+                $("#footerDiv").load("footer.html");
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+
+<div class="content-wrap">
+    <div id="headerDiv"></div>
+    <div class='myFbIframe' >
+        <div style="text-align: center; color:#4C0B5F"><h2>Mownet Avignon Location </h2></div>
+        <div id="dip"></div>
+<iframe
+        width="600"
+        height="450"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCL5x163wK-IjucuRZLHuU8R0bkBYDU1XI&q=University+d'Avignon,Avignon+France" allowfullscreen>
+</iframe>
+
+    </div>
+    <div id="footerDiv"></div>
+</div>
+<!-- Rest of the code -->
+</body>
+</html>
