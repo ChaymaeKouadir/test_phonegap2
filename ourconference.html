@@ -30,6 +30,32 @@
 				});																							
 			}); 
 		</script>
+<!--  code java script qui  permet de recupérer les données de la conférence à partir d'une base de donné local 
+
+<script type = "text/javascript" >
+src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+<script type = "text/javascript" language = "javascript">
+	$(document).ready(function() {
+		$.getJSON('http://localhost:8040/conference/Controllers/communication.php?fx=getConferenceById&id=5', function(jd) {
+			  var img = new Image();
+ 			 img.src = jd.logo;
+ 			
+  			document.getElementById("img-container").appendChild(img);
+			$('#description').html( jd.desc_conference );
+			$('#title-container').html( jd.nom_conference );
+
+		});
+							 $.getJSON('http://localhost:8040/conference/Controllers/communication.php?fx=getSessionByConferenceId&id=1', function(jd) {
+                  $('#stage').html('  <p> ' + jd.id_session + '</p>');
+                  $('#stage').append('<p>' + jd.date_session+ '</p>');
+                  $('#stage').append('<p>' + jd.periode_session+ '</p>');
+            });
+
+	});
+</script>
+-->
 <!--//pop-up-box -->
 <!-- web-fonts -->  
 <link href='//fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
