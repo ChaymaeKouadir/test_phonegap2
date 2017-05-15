@@ -30,6 +30,32 @@
 				});																							
 			}); 
 		</script>
+<!--  code java script qui  permet de recupérer les données de la conférence à partir d'une base de donné local 
+
+<script type = "text/javascript" >
+src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+<script type = "text/javascript" language = "javascript">
+	$(document).ready(function() {
+		$.getJSON('http://localhost:8040/conference/Controllers/communication.php?fx=getConferenceById&id=5', function(jd) {
+			  var img = new Image();
+ 			 img.src = jd.logo;
+ 			
+  			document.getElementById("img-container").appendChild(img);
+			$('#description').html( jd.desc_conference );
+			$('#title-container').html( jd.nom_conference );
+
+		});
+							 $.getJSON('http://localhost:8040/conference/Controllers/communication.php?fx=getSessionByConferenceId&id=1', function(jd) {
+                  $('#stage').html('  <p> ' + jd.id_session + '</p>');
+                  $('#stage').append('<p>' + jd.date_session+ '</p>');
+                  $('#stage').append('<p>' + jd.periode_session+ '</p>');
+            });
+
+	});
+</script>
+-->
 <!--//pop-up-box -->
 <!-- web-fonts -->  
 <link href='//fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
@@ -118,17 +144,37 @@
 					<div class="banner-img">  
 						  
 					</div> 
-					
 					<div class="welcome"> 
 					<img src="images/avignonlogo.jpg" width="100%" height="50%"/> 
-					</br></br></br><p class="w3title-text">The Sixth International Conference on Selected Topics in Mobile & Wireless Networking (MoWNet'17) will be held in Avignon, France.</br> It follows MoWNet'2016, MoWNet'2014, MoWNet'2013, iCOST'2012 and iCOST'2011 which were held in Cairo/Egypt, Rome/Italy, Montreal/Canada, Avignon/France and Shanghai/China. </br>
+					<h3>	International conference on selected topics in Mobile and Wireless Networking</h3>
+					<p class="w3title-text">The Sixth International Conference on Selected Topics in Mobile & Wireless Networking (MoWNet'17) will be held in Avignon, France.</br> It follows MoWNet'2016, MoWNet'2014, MoWNet'2013, iCOST'2012 and iCOST'2011 which were held in Cairo/Egypt, Rome/Italy, Montreal/Canada, Avignon/France and Shanghai/China. </br>
 The ever increasing market penetration of smart-phones, tablets, Netbooks, IoT and wearable devices, along with the ubiquitous availability of wireless networks are deeply influencing the way people live, work, interact, and socialize. However, the broad popularity and diffusion of innovative services and applications tailored at mobile users who are both services consumers and big data producers is also raising challenging research issues that require us to rethink available network and services technology solutions to meet the emerging needs of a broader and ever growing user base and voluminous network traffic. </br>
 MoWNet'17 aims at addressing recent research results on selected topics in Mobile & Wireless Networking and to present their methodologies, models, technologies, systems, tools, applications, work in progress and experiences.</p>
-						<br><br><br>
-				</div>
-					
-					
-				</div>
+											</div>
+					</div>
+
+						
+						<div class="w3ls-text">
+							<h3>Session</h3>	
+						</div>
+
+					<div class="view-caption">
+					<div class="w3ls-text">
+					<a href="session_17wh.html"><h4><span class="glyphicon glyphicon-map-marker"></span>  Wednesday,17 May 2017</h4></a> 
+					</div>	
+				<!--<h4><span class="glyphicon glyphicon-map-marker"></span>  MONDAY, 22 MAY 2017</h4>  -->
+					<div class="view-caption">
+					<div class="w3ls-text">
+
+					<a href="session_18th.html"><h4><span class="glyphicon glyphicon-map-marker"></span> Thursday,18 May 2017</h4></a> 
+					</div>	
+
+				<!--<h4><span class="glyphicon glyphicon-map-marker"></span>  MONDAY, 22 MAY 2017</h4>  -->
+					</div>	
+				</div>														
+
+				</div>													
+			
 				<!-- //banner -->
 				<!-- properties --> 
 			

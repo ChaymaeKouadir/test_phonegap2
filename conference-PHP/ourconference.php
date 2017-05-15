@@ -30,6 +30,30 @@
 				});																							
 			}); 
 		</script>
+
+<script type = "text/javascript" >
+src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+<script type = "text/javascript" language = "javascript">
+	$(document).ready(function() {
+		$.getJSON('http://localhost:8040/conference/Controllers/communication.php?fx=getConferenceById&id=5', function(jd) {
+			  var img = new Image();
+ 			 img.src = jd.logo;
+ 			
+  			document.getElementById("img-container").appendChild(img);
+			$('#description').html( jd.desc_conference );
+			$('#title-container').html( jd.nom_conference );
+
+		});
+							 $.getJSON('http://localhost:8040/conference/Controllers/communication.php?fx=getSessionByConferenceId&id=1', function(jd) {
+                  $('#stage').html('  <p> ' + jd.id_session + '</p>');
+                  $('#stage').append('<p>' + jd.date_session+ '</p>');
+                  $('#stage').append('<p>' + jd.periode_session+ '</p>');
+            });
+
+	});
+</script>
 <!--//pop-up-box -->
 <!-- web-fonts -->  
 <link href='//fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
@@ -42,7 +66,7 @@
 			
 			<nav class="top-nav">
 				<ul class="icon-list">
-					<li><a class="active" href="index.html"><i class="glyphicon glyphicon-home"></i> Home </a></li>
+				<li><a class="active" href="index.html"><i class="glyphicon glyphicon-home"></i> Home </a></li>
 					<li><a href="profile.html"><i class="glyphicon glyphicon-user"></i> Profile </a></li>
 					<li><a href="conference.html"><i class="glyphicon glyphicon-th"></i> Conference </a></li>
 					<li><a href="s_networks.html"><i class="glyphicon glyphicon-heart-empty"></i> Social networks </a></li>
@@ -75,8 +99,8 @@
 					<h2><a href="index.html"><img src="images/logo.png"></a></h2>
 				</div>
 				<div class="login">
-				<a href="#small-dialog" class="sign-in popup-top-anim"><span class="glyphicon glyphicon-envelope"></span></a>
-				<a href="#small-dialog" class="sign-in popup-top-anim"><span class="glyphicon glyphicon-bell"></span></a> 
+					<a href="#small-dialog" class="sign-in popup-top-anim"><span class="glyphicon glyphicon-envelope"></span></a>
+					<a href="#small-dialog" class="sign-in popup-top-anim"><span class="glyphicon glyphicon-bell"></span></a>
 					<!-- modal -->
 					<div id="small-dialog" class="mfp-hide">
 						<div class="login-modal"> 	
@@ -113,80 +137,40 @@
 				<div class="clearfix"> </div>
 			</div>
 			<div class="content">
+				<!-- banner -->
 				<div class="banner about-banner"> 
-					<div class="banner-img">   
+					<div class="banner-img">  
+						  
 					</div> 
-				</div>
-				
-				
-				
-					<div class="w3agile brands"> 
-					<h4 class="w3ls-title">Our technical Sponsors</h4> 
-					<div class="brands-info">
-						<div class="brand-grids">
-							<a href="https://www.ieee.org/index.html"><img src="images/b1.jpg" height=60 alt=""/></a>
-						</div>
-						<div class="brand-grids">
-							<a href="http://mownet.org/"><img src="images/b2.jpg" height=60 alt=""/></a>
-						</div>
-						
-						
-						<div class="brand-grids">
-							<a href="https://www.computer.org/web/guest"><img src="images/b5.jpg" height=60  alt=""/></a>
-						</div>
-						</br></br>
 					
-						<div class="clearfix"> </div>
-					</div>
+					<div class="welcome"> 
+					<h1 align="center" id="title-container"> </h1>
+					<div id="img-container" width="100%" height="50%"> </div>
+					</br></br></br><p class="w3title-text" id="description"> </p>
+					<hr><hr><hr><hr>
+					<p class="w3title-text" id="stage"> </p>
+						<br><br><br>
 				</div>
-				
-				
-					<div class="w3agile brands">  
-					<div class="brands-info">
 					
-						<h4 class="w3ls-title">Our local organizers</h4> 
-						<center><div class="brand-grids">
-							<a href="http://univ-avignon.fr/site-institutionnel-de-l-universite-d-avignon-859.kjsp"><img src="images/b4.jpg" height=100 alt=""/></a>
-						</div>
-						
-						<div class="brand-grids">
-							<a href="http://lia.univ-avignon.fr/"><img src="images/b3.jpg" height=60 alt=""/></a>
-						</div></center>
-						<div class="clearfix"> </div>
+					
+				</div>
+				<!-- //banner -->
+				<!-- properties --> 
+			
+				<!-- //properties --> 
+				<!-- brands -->
+				
+				<!-- //brands -->
+				<!-- footer -->
+				<div class="w3agile footer"> 
+				
+					 
+					<div class="footer-text">
+						<p>&copy; CERI Avignon</a></p>
 					</div>
-				</div>
+				</div> 
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			<div class="w3agile footer"> 
-				<div class="footer-text">
-				<p>&copy; CERI Avignon</a></p>
-				</div>
-			</div> 
-				
+			
 				
 			</div>
 		</div>

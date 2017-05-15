@@ -63,7 +63,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <li><a href="#small-dialog" class="sign-in popup-top-anim"><i class="glyphicon glyphicon-log-in"></i> Sign In</a></li>
 
 
-                <div class="clearfix"> </div>
+
                 <script>
 							$( "li a.sign-in" ).click(function() {
 
@@ -125,36 +125,81 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="clearfix"> </div>
         </div>
         <div class="content">
+            <!-- banner -->
+            <div class="banner about-banner">
+                <div class="banner-img">
 
-
-
+                </div>
+            </div>
+            <!-- //banner -->
             <div class="w3agile gallery">
+
                 <h3 class="w3ls-title">Replay Videos </h3>
                 <div class="gallery-row">
-                    <div class="gallery-grids">
-                        <div class="w3ls-hover">
-                            <iframe src="https://www.youtube.com/embed/8-0uoRNERE4"></iframe>
-                        </div>
+
+                            <div id="player"></div>
+                    <div id="player2"></div></div>
+
+
                     </div>
-                    <div class="gallery-grids">
-                        <div class="w3ls-hover">
-                            <iframe src="https://www.youtube.com/embed/H8wvvUSgr4s" ></iframe>
-                        </div>
-                    </div>
-                    <div class="gallery-grids">
-                        <div class="w3ls-hover">
-                            <iframe  src="https://www.youtube.com/embed/j9KKh215HTs" ></iframe>
-                        </div>
-                    </div>
+
+
+
+                <script>
+
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+      var player;
+            var player2;
+function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+   height: '250',
+    width: '300',
+          videoId: '3n_PZlXzS8o',
+          events: {
+            'onReady': onPlayerReady,
+    }
+        });
+
+
+        player2 = new YT.Player('player2', {
+   height: '250',
+    width: '300',
+          videoId: 'cS5QAAMML6s',
+                });
+ }
+
+
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+
+    </script>
                     <div class="clearfix"> </div>
-                </div>
 
             </div>
 
             <!-- footer -->
             <div class="w3agile footer">
                 <div class="footer-text">
-                    <p>&copy; CERI Avignon</a></p>
+                    <p>&copy; CERI Avignon</p>
                 </div>
             </div>
 
